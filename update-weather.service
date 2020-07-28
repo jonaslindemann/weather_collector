@@ -1,0 +1,15 @@
+[Unit]
+Description=Weather-Collector
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 -u update_weather.py 
+WorkingDirectory=/home/pi/Development/weather_collector
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target

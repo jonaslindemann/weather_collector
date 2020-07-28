@@ -3,7 +3,7 @@ import os, datetime, json
 from pyparticle import Particle
 
 class WeatherStation:
-    def __init__(self, device_id, access_token):
+    def __init__(self, device_id, access_token, history_filename):
 
         self.__token = access_token
         self.__device_id = device_id
@@ -23,7 +23,7 @@ class WeatherStation:
 
         self.latest_poll = datetime.datetime.now()
 
-        self.history_filename = "ws-state.json"
+        self.history_filename = history_filename
 
         self.load_from_json()
 
